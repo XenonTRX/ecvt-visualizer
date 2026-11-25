@@ -198,7 +198,7 @@
         <fieldset>
           <legend>Lever diagram &#8212; speeds</legend>
           <div class="sunken">
-            <svg id="lever" viewBox="0 0 520 430" role="img"
+            <svg id="lever" viewBox="0 0 520 450" role="img"
                  aria-label="Lever diagram showing MG1, engine and output speeds on one straight line"></svg>
           </div>
           <p style="margin-top:7px;color:#44443d;">Heights are shaft speeds. The three nodes sit at tooth-count
@@ -473,7 +473,7 @@
     var g=document.getElementById('lever');clear(g);
     var span=S.Zs+S.Zr,px=function(t){return X0+t*(X1-X0)/span;};
     var xs=px(0),xc=px(S.Zr),xr=px(span),z=sy(0);
-    g.appendChild(el('rect',{x:0,y:0,width:520,height:430,fill:'#fff'}));
+    g.appendChild(el('rect',{x:0,y:0,width:520,height:450,fill:'#fff'}));
     [[10000,VMAX],[VMIN,-10000]].forEach(function(p){
       var yA=sy(p[1]),yB=sy(p[0]);
       g.appendChild(el('rect',{x:xs-13,y:Math.min(yA,yB),width:26,height:Math.abs(yB-yA),fill:'var(--crit-soft)'}));
@@ -523,7 +523,7 @@
     pin(xs,y1,'var(--elec)',fmt(d.w1,0),1);
     pin(xc,yc,'#1a1a1a',fmt(d.we,0),-1);
     pin(xr,yr,'var(--mech)',fmt(d.wo,0),-1);
-    g.appendChild(el('text',{x:4,y:Y1+47,'font-size':9.5,fill:'var(--ink3)'},
+    g.appendChild(el('text',{x:4,y:Y1+66,'font-size':9.5,fill:'var(--ink3)'},
       'tilt = (ωout − ωice)/Zs = '+fmt(d.tilt,0)));
   }
 
